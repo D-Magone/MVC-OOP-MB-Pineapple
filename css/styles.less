@@ -1,0 +1,585 @@
+@background-color:     #FFFFFF;
+@text-color:           #6A707B;
+@header-label-color:   #131821;
+@checkbox-input-color: #4066A5;
+@border-color:         #E3E3E4;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTAINER GRID FOR WHOLE PAGE */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 680px auto;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.container-left {
+    width: 680px;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(180deg, @background-color 0%, #F2F5FA 100%);
+}
+
+/* NAVIGATION BAR */
+.logo img, .nav-links {
+  position: absolute;
+}
+
+    /*  LOGO  */
+.logo-img {
+    top: 100px;
+    left: 100px;
+}
+
+.logo-text {
+    top: 120px;
+    left: 140px;
+}
+
+    /* NAV LINKS */
+.nav-links {
+    top: 114px;
+    left: 331px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 26px;
+    font-family: Arial;
+    font-style: normal;
+    font-weight: normal;
+    color: @text-color;
+    padding: 15px;
+}
+
+/* MAIN PAGE CONTENT */
+.subscribe-container {
+    position: absolute;
+}
+
+    /* ARTICLE CONTENT - Subscribe to newsletter */
+article {
+    position: absolute;
+}
+
+article h1 {
+    width: 399px;
+    height: 44px;
+    position: inherit;
+    top: 374px;
+    left: 140px;
+    font-family: Georgia;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;
+    color: @header-label-color;
+}
+
+article p {
+    width: 400px;
+    height: 56px;
+    position: inherit;
+    top: 433px;
+    left: 140px;
+    color: @text-color;
+    font-family: Arial;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+
+/* EMAIL INPUT AND TERMS CHECKBOX */
+.input-container {
+    position: absolute;
+}
+
+    /* INPUT AND SUBMIT */
+.input-line {
+    width: 4px;
+    height: 70px;
+    position: inherit;
+    top: 539px;
+    left: 100px;
+    background-color: @checkbox-input-color;
+    z-index: 3;
+}
+
+.input-email {
+    width: 663px;
+    height: 70px;
+    position: inherit;
+    top: 539px;
+    left: 100px;
+    background: @background-color;
+    border: 1px solid @border-color;
+    box-sizing: border-box;
+
+    font-family: Arial;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: @text-color;
+    padding-left: 44px;
+}
+
+.input-email:focus-visible {
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+    color: @header-label-color;
+    border: 1px solid @checkbox-input-color;
+    outline: none;
+}
+
+.input-email:hover {
+    box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+    box-sizing: border-box;
+}
+
+.subscribe-btn {
+    position: absolute;
+    width: 83px;
+    height: 70px;
+    border: 0;
+    top: 539px;
+    left: 680px;
+
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: 14px;
+    display: block;
+    position: absolute;
+    top: 28px;
+    left: 19px;
+    border: none;
+    // visibility: visible;
+    background: url("icons/ic_arrow.svg") no-repeat;
+
+    &:hover {
+        background: url("icons/ic_arrow_blue.svg") no-repeat;
+    }
+}
+
+    /* TERMS & SERVICES CHECKBOX */
+.form-checkbox {
+    position: absolute;
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    top: 663px;
+    left: 140px;
+
+    background: @background-color;
+    border: 1px solid @border-color;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    cursor: pointer;
+}
+
+.form-checkbox:checked {
+    background: @checkbox-input-color;
+}
+
+.checkmark {
+    position: absolute;
+    width: 14px;
+    height: 11px;
+
+    top: 8px;
+    left: -35px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    position: absolute;
+    width: 359px;
+    height: 28px;
+    top: 662px;
+    left: 181px;
+
+    font-family: Arial;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: @text-color;
+}
+
+.checkbox-label::before {
+    visibility: hidden;
+}
+
+:checked + .checkbox-label::before .checkmark{
+    visibility: visible;
+}
+
+.checkbox-label a {
+    color: @header-label-color;
+}
+
+.checkbox-label a:hover {
+    color: @checkbox-input-color;
+}
+
+.checkbox-label a:active {
+    color: #233759;
+}
+
+    /* ERROR MSG */
+.error-msg {
+    position: absolute;
+    width: 580px;
+    top: 610px;
+    left: 100px;
+
+    color: #FF0000;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+/* FOOTER CONTENT */
+footer {
+    position: absolute;
+}
+
+.footer-line {
+    position: absolute;
+    width: 400px;
+    height: 1px;
+    top: 740px;
+    left: 140px;
+    background-color: @border-color;
+    
+}
+
+    /* CIRCLE AROUND SOCIAL MEDIA BUTTONS */
+.social-media-btn {
+    position: absolute;
+    top: 791px;
+    width: 46px;
+    height: 46px;
+    border: 2px solid @border-color;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fb {
+    left: 218px;
+    &:hover {
+        background: #4267B2;
+    }
+    &:active {
+        background: #2F4A80;
+    }
+}
+
+.ig {
+    left: 284px;
+    &:hover {
+        background: #C13584;
+    }
+    &:active {
+        background: #8F2762;
+    }
+}
+
+.tw {
+    left: 350px;
+    &:hover {
+        background: #1DA1F2;
+    }
+    &:active {
+        background: #177FBF;
+    }
+}
+
+.yt {
+    left: 416px;
+    &:hover {
+        background: #FF0000;
+    }
+    &:active {
+        background: #CC0000;
+    }
+}
+
+
+    /* SOCIAL MEDIA ICONS */
+.fb-hover,
+.ig-hover,
+.tw-hover,
+.yt-hover {
+    visibility: hidden;
+}
+
+.soc-media-icon {
+    position: absolute;
+}
+
+.facebook-icon {
+    top: 15px;
+    left: 19px;
+}
+
+.instagram-icon {
+    top: 15px;
+    left: 15px;
+}
+
+.twitter-icon, 
+.youtube-icon {
+    top: 17px;
+    left: 15px;
+}
+
+    /* HOVER EFFECT */
+
+    .fb:hover,
+    .ig:hover,
+    .tw:hover,
+    .yt:hover {
+        box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+        border: 0;
+    }
+    
+    .fb:hover .facebook-icon,
+    .ig:hover .instagram-icon,
+    .tw:hover .twitter-icon,
+    .yt:hover .youtube-icon {
+        display: none;
+    }
+    
+    .fb:hover .fb-hover,
+    .ig:hover .ig-hover,
+    .tw:hover .tw-hover,
+    .yt:hover .yt-hover {
+        visibility: visible;
+        display: block;
+    }
+    
+
+/* PINEAPPLE BACKGROUND IMAGE */
+.picture-container {
+    background-image: url('./img/image_summer.png');
+    width: 100%;
+    height: auto;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    grid-area: 1 / 2 / span 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* RESPONSIVE AT 375px */
+
+@media screen and (max-width: 375px) {
+
+    /* CONTAINER GRID FOR WHOLE PAGE */
+    .container {
+        display: grid;
+        position: relative;
+        grid-template-columns: auto 226px;
+        grid-template-rows: 66px auto;
+        overflow: hidden;
+    }
+
+    .container-left {
+        width: 0;
+        height: 0;
+    }
+
+    /* NAVIGATION BAR */
+    header {
+        width: 375px;
+        height: 66px;
+        background-color: @background-color;
+        top: 0;
+        left: 0;
+        grid-area: 1 / 1 / span 1 / span 2;
+    }
+
+    .logo-img {
+        top: 10px;
+        left: 20px;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    .nav-links {
+        width: 226px;
+        height: 24px;
+        top: 21px;
+        left: 149px;
+    }
+    
+    nav a {
+        font-size: 14px;
+        line-height: 24px;
+        color: @text-color;
+        padding-left: 0;
+    }
+
+    /* MAIN PAGE CONTENT */
+    .subscribe-container {
+        width: 335px;
+        height: 371px;
+        top: 254px;
+        left: 20px;
+        background: linear-gradient(180deg, @background-color 0%, #F2F5FA 100%);
+        grid-area: 2 / 1 / span 1 / span 2;
+    }
+
+        /* ARTICLE CONTENT - Subscribe to newsletter */
+    article h1 {
+        width: 295px;
+        height: 34px;
+        top: 30px;
+        left: 20px;
+
+        font-size: 24px;
+        line-height: 34px;
+    }
+
+    article p {
+        width: 295px;
+        height: 52px;
+        top: 74px;
+        left: 20px;
+        
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+
+    /* EMAIL INPUT AND TERMS CHECKBOX */
+    .input-line {
+        width: 4px;
+        height: 60px;
+        top: 146px;
+        left: 20px;
+
+        background-color: @checkbox-input-color;
+        z-index: 3;
+    }
+    
+    .input-email {
+        width: 295px;
+        height: 60px;
+        top: 146px;
+        left: 20px;
+      
+        padding-left: 19px;
+    }
+
+    .subscribe-btn {
+        top: 146px;
+        left: 276px;
+    }
+    
+    .arrow-icon {
+        top: 23px;
+        left: 0px;
+    }
+
+    .form-checkbox {
+        top: 227px;
+        left: 20px;
+    }
+    
+    .checkbox-label {
+        width: 254px;
+        height: 28px;
+        top: 226px;
+        left: 61px;
+    }
+
+    .checkmark {
+        top: 8px;
+        left: -35px;
+    }
+
+    .error-msg {
+        position: absolute;
+        width: 295px;
+        top: 205px;
+        left: 20px;
+
+        font-size: 11.5px;
+        line-height: 26px;
+    }
+
+    /* FOOTER CONTENT */
+    footer {
+        position: absolute;
+    }
+    
+    .footer-line {
+        width: 295px;
+        height: 1px;
+        top: 462px;
+        left: 40px;
+        background-color: @border-color;
+    }
+    
+    .social-media-btn {
+        top: 483px;
+    }
+    
+    .fb {
+        left: 73px;
+    }
+    
+    .ig {
+        left: 129px;
+    }
+    
+    .tw {
+        left: 185px;
+    }
+    
+    .yt {
+        left: 241px;
+    }
+
+    /* PICTURE CONTAINER */
+    .picture-container {
+        grid-area: 1 / 1 / span 2 / span 2;
+        z-index: -2;
+    }
+}
